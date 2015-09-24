@@ -1,0 +1,77 @@
+<!-- Доктайп HTML5 -->
+<!doctype html>
+<!-- Язык русский и класс no-js библиотеки Modernizr, который замещается на js, если JavaScript включен -->
+<html lang="ru" class="no-js">
+<head>
+	<!-- Устанавливаем кодировку UTF-8 -->
+	<meta charset="UTF-8">
+	<!-- Размер вьюпорта (области просмотра) равен ширине дисплея устройства и начальный масштаб равен единице; если не установить, то на мобильном устройстве будет отображаться масштабированная по ширине дисплея полноэкранная страница -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Модальное окно с SVG | MakeWeb.me</title>
+	<!-- Подгружаем шрифт Roboto с Google Fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+
+	<!-- CSS Reset - сброс стилей -->
+	<link rel="stylesheet" href="css/reset.css">
+	<!-- Наши стили -->
+	<link rel="stylesheet" href="css/style.css">
+	<!-- Грузим Modernizr - он должен быть в секции <head>, иначе работать не будет -->
+	<script src="js/modernizr.js"></script>
+</head>
+
+<body>
+	<!-- Тут находится основной контент страницы -->
+	<main class="main-content">
+		<section class="center">
+			<h1>Модальное окно с SVG</h1>
+			<!-- Кнопка показа модального окна -->
+			<a href="#" class="btn" id="modal-trigger" data-type="modal-trigger">Покажи мне чудо!</a>
+		</section>
+	</main> <!-- .main-content -->
+
+	<!-- Это само модальное окно -->
+	<div class="modal" data-modal="modal-trigger">
+		<div class="svg-bg" 
+		data-step1="M-59.9,540.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L864.8-41c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3L-59.5,540.6 C-59.6,540.7-59.8,540.7-59.9,540.5z" 
+		data-step2="M33.8,690l-188.2-300.3c-0.1-0.1,0-0.3,0.1-0.3l925.4-579.8c0.1-0.1,0.3,0,0.3,0.1L959.6,110c0.1,0.1,0,0.3-0.1,0.3 L34.1,690.1C34,690.2,33.9,690.1,33.8,690z" 
+		data-step3="M-465.1,287.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L459.5-294c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3 l-925.4,579.8C-464.9,287.7-465,287.7-465.1,287.5z" 
+		data-step4="M-329.3,504.3l-272.5-435c-0.1-0.1,0-0.3,0.1-0.3l925.4-579.8c0.1-0.1,0.3,0,0.3,0.1l272.5,435c0.1,0.1,0,0.3-0.1,0.3 l-925.4,579.8C-329,504.5-329.2,504.5-329.3,504.3z" 
+		data-step5="M341.1,797.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L1265.8,216c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3L341.5,797.6 C341.4,797.7,341.2,797.7,341.1,797.5z" 
+		data-step6="M476.4,1013.4L205,580.3c-0.1-0.1,0-0.3,0.1-0.3L1130.5,0.2c0.1-0.1,0.3,0,0.3,0.1l271.4,433.1c0.1,0.1,0,0.3-0.1,0.3 l-925.4,579.8C476.6,1013.6,476.5,1013.5,476.4,1013.4z">
+			<!-- Размещаем все векторные объекты внутри <svg> - здесь мы фактически вставили содержимое SVG-файла прямо в HTML и так нам делать можно. Растягиваем на всю ширину родителя, говорим, что сохранять пропорции нам не нужно (preserveAspectRatio) и задаем размер бокса самого SVG-изображения (viewBox) -->
+			<svg height="100%" width="100%" preserveAspectRatio="none" viewBox="0 0 800 500">
+				<!-- Заголовок тут больше для скринридеров -->
+				<title>Фон модального окна</title>
+				<!-- Три векторных элемента, анимируя которые, мы получаем эффект "съезжания" фона модального из трех частей -->
+				<path id="changing-path-1" d="M-59.9,540.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L864.8-41c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3L-59.5,540.6 C-59.6,540.7-59.8,540.7-59.9,540.5z"/>
+				<path id="changing-path-2" d="M-465.1,287.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L459.5-294c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3 l-925.4,579.8C-464.9,287.7-465,287.7-465.1,287.5z"/>
+				<path id="changing-path-3" d="M341.1,797.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L1265.8,216c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3L341.5,797.6 C341.4,797.7,341.2,797.7,341.1,797.5z"/>
+			</svg>
+		</div>
+
+		<!-- Содержимое модального окна (текст-рыба) -->
+		<div class="modal-content">
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad modi repellendus, optio eveniet eligendi molestiae? Fugiat, temporibus! A rerum pariatur neque laborum earum, illum voluptatibus eum voluptatem fugiat, porro animi tempora? Sit harum nulla, nesciunt molestias, iusto aliquam aperiam est qui possimus reprehenderit ipsam ea aut assumenda inventore iste! Animi quaerat facere repudiandae earum quisquam accusamus tempora, delectus nesciunt, provident quae aliquam, voluptatum beatae quis similique in maiores repellat eligendi voluptas veniam optio illum vero! Eius, dignissimos esse eligendi veniam.
+			</p>
+
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad modi repellendus, optio eveniet eligendi molestiae? Fugiat, temporibus! A rerum pariatur neque laborum earum, illum voluptatibus eum voluptatem fugiat, porro animi tempora? Sit harum nulla, nesciunt molestias, iusto aliquam aperiam est qui possimus reprehenderit ipsam ea aut assumenda inventore iste! Animi quaerat facere repudiandae earum quisquam accusamus tempora, delectus nesciunt, provident quae aliquam, voluptatum beatae quis similique in maiores repellat eligendi voluptas veniam optio illum vero! Eius, dignissimos esse eligendi veniam.
+			</p>
+		</div> <!-- modal-content -->
+
+		<!-- Кнопка для закрытия модального окна -->
+		<a href="#" class="modal-close">Закрыть</a>
+	</div> <!-- modal -->
+
+	<!-- Первоначально невидимый контейнер, который позволяет плавно скрыть основной контент, когда происходит "съезжание" трех частей синего фона модального окна (уменьшай время анимации до 10 секунд в scss- и js-файлах, чтобы наглядно пронаблюдать, о чем идет речь) -->
+	<div class="cover-layer"></div> <!-- .cover-layer -->
+
+	<!-- Используем jQuery -->
+	<script src="js/jquery-2.1.4.js"></script>
+	<!-- Для манипуляций с SVG будем использовать библиотеку Snap.svg -->
+	<script src="js/snap.svg-min.js"></script>
+	<!-- Скрипт, содержащий код для анимации модального окна -->
+	<script src="js/main.js"></script>
+</body>
+</html>
